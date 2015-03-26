@@ -1,0 +1,34 @@
+﻿<!doctype html>
+<html>  
+	<head>  
+		<meta charset="UTF-8" />  
+		<meta content="no" name="apple-mobile-web-app-capable">
+		<meta content="width=640,target-densitydpi=device-dpi,user-scalable=no" name="viewport">
+		<title>canvas</title>  
+		<link rel="stylesheet" type="text/css" href="css/style.css"></link>
+		<style>
+			#a{width:100%;height:10px;background:#000;}
+			#b{width:0;height:100%;background:#ccc;}
+		</style>
+	</head>  
+	<body id="body">  
+		<div id="a">
+			<div id="b"></div>
+		</div>
+		<p><span id="num">0</span>%</p>
+		<div id="img"><img src="onstar/1.png"><img src="onstar/2.png"><img src="onstar/3.png"><img src="onstar/4.png"><img src="onstar/5.png"><img src="onstar/6.png"><img src="onstar/7.png"><img src="onstar/8.png"><img src="onstar/9.png"><img src="onstar/10.png"><img src="onstar/11.png"><img src="onstar/12.png"><img src="onstar/13.png"><img src="onstar/14.png"><img src="onstar/15.png"><img src="onstar/16.png"><img src="onstar/17.png"><img src="onstar/18.png"><img src="onstar/19.png"><img src="onstar/20.png"><img src="onstar/21.png"><img src="onstar/22.png"><img src="onstar/23.png"><img src="onstar/24.png"><img src="onstar/25.png"><img src="onstar/26.png"><img src="onstar/27.png"><img src="onstar/28.png"><img src="onstar/29.png"><img src="onstar/30.png"><img src="onstar/31.png"><img src="onstar/32.png"><img src="onstar/33.png"><img src="onstar/34.png"><img src="onstar/35.png"><img src="onstar/36.png"><img src="onstar/37.png"><img src="onstar/38.png"><img src="onstar/39.png"><img src="onstar/40.png"><img src="onstar/41.png"><img src="onstar/42.png"><img src="onstar/43.png"><img src="onstar/44.png"></div>
+		<script type="text/javascript" src="js/image.js"></script>
+		<script type="text/javascript">	
+			var imglist=['http://waynever.sinaapp.com/game/images/1.png','http://waynever.sinaapp.com/game/images/2.png','http://waynever.sinaapp.com/game/images/3.png','http://waynever.sinaapp.com/game/images/4.png','http://waynever.sinaapp.com/game/images/5.png','http://waynever.sinaapp.com/game/images/6.png','http://waynever.sinaapp.com/game/images/7.png','http://waynever.sinaapp.com/game/images/8.png','http://waynever.sinaapp.com/game/images/9.png','http://waynever.sinaapp.com/game/images/10.png','http://waynever.sinaapp.com/game/images/11.png','http://waynever.sinaapp.com/game/images/12.png','http://waynever.sinaapp.com/game/images/13.png','http://waynever.sinaapp.com/game/images/14.png','http://waynever.sinaapp.com/game/images/15.png','http://waynever.sinaapp.com/game/images/16.png'];
+			
+			getImgload(imglist,function(){
+				document.getElementById("num").innerHTML = ((this.num/this.sum)*100).toFixed(0);
+				document.getElementById("b").style.width = 100*(this.num/this.sum)+'%';
+				console.log(this);
+				if(this.num == this.sum){
+					console.log("加载完成");
+				}
+			});
+		</script>  
+	</body>  
+</html>  

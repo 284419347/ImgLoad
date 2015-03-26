@@ -1,0 +1,42 @@
+﻿<!doctype html>
+<html>  
+	<head>  
+		<meta charset="UTF-8" />  
+		<meta content="no" name="apple-mobile-web-app-capable">
+		<meta content="width=640,target-densitydpi=device-dpi,user-scalable=no" name="viewport">
+		<title>canvas</title>  
+		<link rel="stylesheet" type="text/css" href="css/style.css"></link>
+	</head>  
+	<body>  
+		<canvas id="canvas" width="415" height="229" style="border:1px solid #000;">
+			<p>您的浏览器不支持该功能，抱歉！</p>
+		</canvas>
+		<script type="text/javascript">  
+		var canvas = document.getElementById("canvas");
+		var cxt=canvas.getContext("2d");
+		var image = new Image();
+		var i = 0;
+		function drawImages(){
+			i++;
+			if(i == 45){i = 1}
+			preImage("onstar/"+i+".png",function(){  
+				cxt.drawImage(this,0,0);  
+			}); 
+		}
+		drawImages();
+		setInterval(drawImages,10);
+		
+		function preImage(url,callback){  
+			 var img = new Image();
+			 img.src = url;  
+			if (img.complete) {
+				 callback.call(img);  
+				return;
+			 }  
+			 img.onload = function () {
+				 callback.call(img);
+			 };  
+		}  
+		</script>  
+	</body>  
+</html>  

@@ -1,0 +1,24 @@
+html, body, address, blockquote, div, dl, form, h1, h2, h3, h4, h5, h6, ol, p, pre, table, ul,
+dd, dt, li, tbody, td, tfoot, th, thead, tr, button, del, ins, map, object,
+a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd, q, samp, small, span,
+strong, sub, sup, tt, var, legend, fieldset {margin: 0;padding: 0;}
+img, fieldset {border: 0;}
+img {max-width: 100%;height: auto;width: auto\9; /* ie8 */}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+body {font: .81em/150% '微软雅黑';color: #000;}
+a {color: #026acb;text-decoration: none;outline: none;}
+a:hover {text-decoration: none;}
+p {margin: 0 0 1.2em;padding: 0;}
+ul, ol {margin: 1em 0 1.4em 24px;padding: 0;line-height: 140%;}
+li {list-style:none;margin: 0 0 .5em 0;padding: 0;}
+h1, h2, h3, h4, h5, h6 {line-height: 1.4em;margin: 20px 0 .4em;color: #000;}
+h1 {font-size: 2em;}
+h2 {font-size: 1.6em;}
+h3 {font-size: 1.4em;}
+h4 {font-size: 1.2em;}
+h5 {font-size: 1.1em;}
+h6 {font-size: 1em;}
+body,html{height:100%;width:100%;position:relative;}
+.box{width:640px;margin:0 auto;position:relative;overflow:hidden;min-height:100%;background:#2db6fe;box-shadow: 0 0 5px 0 #000000;}
+.mode{height:100px;width:100px;box-shadow:0 0 5px 0 #000;border-radius:50%;background:#fff;position:absolute;bottom:10px;left:50%;margin-left:-50px;}
+.mode{height:60px;width:100px;}
