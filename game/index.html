@@ -6,82 +6,29 @@
 		<meta content="width=640,target-densitydpi=device-dpi,user-scalable=no" name="viewport">
 		<title>canvas</title>  
 		<link rel="stylesheet" type="text/css" href="css/style.css"></link>
+		<style>
+			#a{width:100%;height:10px;background:#000;}
+			#b{width:0;height:100%;background:#ccc;}
+		</style>
 	</head>  
-	<body>  
-		<canvas id="canvas" width="640" height="960" style="border:1px solid #000;">
-			<p>您的浏览器不支持该功能，抱歉！</p>
-		</canvas>
-		<p>左右：<span id="alpha">0</span></p>  
-		<p>前后：<span id="beta">0</span></p>  
-		<p>扭转：<span id="gamma">0</span></p>  
-		<p>指北针指向：<span id="heading">0</span>度</p>  
-		<p>指北针精度：<span id="accuracy">0</span>度</p>  
-		<p>x轴加速度：<span id="x">0</span>米每二次方秒</p>  
-		<p>y轴加速度：<span id="y">0</span>米每二次方秒</p>  
-		<p>z轴加速度：<span id="z">0</span>米每二次方秒</p>  
-		<hr />  
-		<p>x轴加速度(考虑重力加速度)：<span id="xg">0</span>米每二次方秒</p>  
-		<p>y轴加速度(考虑重力加速度)：<span id="yg">0</span>米每二次方秒</p>  
-		<p>z轴加速度(考虑重力加速度)：<span id="zg">0</span>米每二次方秒</p>  
-		<hr />  
-		<p>左右旋转速度：<span id="alpha1">0</span>度每秒</p>  
-		<p>前后旋转速度：<span id="beta1">0</span>度每秒</p>  
-		<p>扭转速度：<span id="gamma1">0</span>度每秒</p>  
-		<hr />  
-		<p>上次收到通知的间隔：<span id="interval">0</span>毫秒</p>  
-		<script type="text/javascript">  
-		var date = {};
-		var canvas = document.getElementById("canvas");
-		var cxt=canvas.getContext("2d");
-		draw(0,0);
-		setInterval(function(){
-			draw(date.gamma,date.beta);
-		},10);
-		function draw(x,y){
-			cxt.clearRect(0,0,canvas.width,canvas.height);
-			cxt.fillStyle="#FF0000";
-			cxt.beginPath();
-			cxt.arc(315+x*150,475+y*150,10,0,Math.PI*2,true);
-			cxt.closePath();
-			cxt.fill();
-		}
-		function orientationHandler(event){  
-			document.getElementById("alpha").innerHTML = event.alpha/90.0*Math.PI/2;  
-			document.getElementById("beta").innerHTML = event.beta/90.0*Math.PI/2;  
-			document.getElementById("gamma").innerHTML = event.gamma/90.0*Math.PI/2;  
-			document.getElementById("heading").innerHTML = event.webkitCompassHeading;  
-			document.getElementById("accuracy").innerHTML = event.webkitCompassAccuracy;  
-			date.alpha = event.alpha/90.0*Math.PI/2; 
-			date.beta = event.beta/90.0*Math.PI/2; 
-			date.gamma = event.gamma/90.0*Math.PI/2;
-		}
-		if (window.DeviceOrientationEvent) {  
-		  window.addEventListener("deviceorientation", orientationHandler, false);  
-		} else {  
-		  document.body.innerHTML = "What user agent u r using???";  
-		}  
-		</script>  
-		<script type="text/javascript">  
-		function motionHandler(event){  
-			document.getElementById("interval").innerHTML = event.interval;  
-			var acc = event.acceleration;  
-			document.getElementById("x").innerHTML = acc.x;  
-			document.getElementById("y").innerHTML = acc.y;  
-			document.getElementById("z").innerHTML = acc.z;  
-			var accGravity = event.accelerationIncludingGravity;  
-			document.getElementById("xg").innerHTML = accGravity.x;  
-			document.getElementById("yg").innerHTML = accGravity.y;  
-			document.getElementById("zg").innerHTML = accGravity.z;  
-			var rotationRate = event.rotationRate;  
-			document.getElementById("alpha1").innerHTML = rotationRate.alpha;  
-			document.getElementById("beta1").innerHTML = rotationRate.beta;  
-			document.getElementById("gamma1").innerHTML = rotationRate.gamma;  
-		}
-		if (window.DeviceMotionEvent) {  
-		  window.addEventListener("devicemotion", motionHandler, false);  
-		} else {  
-		  document.body.innerHTML = "What user agent u r using???";  
-		}  
+	<body id="body">  
+		<div id="a">
+			<div id="b"></div>
+		</div>
+		<p><span id="num">0</span>%</p>
+		<div id="img"><img src="onstar/1.png"><img src="onstar/2.png"><img src="onstar/3.png"><img src="onstar/4.png"><img src="onstar/5.png"><img src="onstar/6.png"><img src="onstar/7.png"><img src="onstar/8.png"><img src="onstar/9.png"><img src="onstar/10.png"><img src="onstar/11.png"><img src="onstar/12.png"><img src="onstar/13.png"><img src="onstar/14.png"><img src="onstar/15.png"><img src="onstar/16.png"><img src="onstar/17.png"><img src="onstar/18.png"><img src="onstar/19.png"><img src="onstar/20.png"><img src="onstar/21.png"><img src="onstar/22.png"><img src="onstar/23.png"><img src="onstar/24.png"><img src="onstar/25.png"><img src="onstar/26.png"><img src="onstar/27.png"><img src="onstar/28.png"><img src="onstar/29.png"><img src="onstar/30.png"><img src="onstar/31.png"><img src="onstar/32.png"><img src="onstar/33.png"><img src="onstar/34.png"><img src="onstar/35.png"><img src="onstar/36.png"><img src="onstar/37.png"><img src="onstar/38.png"><img src="onstar/39.png"><img src="onstar/40.png"><img src="onstar/41.png"><img src="onstar/42.png"><img src="onstar/43.png"><img src="onstar/44.png"></div>
+		<script type="text/javascript" src="js/image.js"></script>
+		<script type="text/javascript">	
+			var imglist=['http://waynever.sinaapp.com/game/images/1.png','http://waynever.sinaapp.com/game/images/2.png','http://waynever.sinaapp.com/game/images/3.png','http://waynever.sinaapp.com/game/images/4.png','http://waynever.sinaapp.com/game/images/5.png','http://waynever.sinaapp.com/game/images/6.png','http://waynever.sinaapp.com/game/images/7.png','http://waynever.sinaapp.com/game/images/8.png','http://waynever.sinaapp.com/game/images/9.png','http://waynever.sinaapp.com/game/images/10.png','http://waynever.sinaapp.com/game/images/11.png','http://waynever.sinaapp.com/game/images/12.png','http://waynever.sinaapp.com/game/images/13.png','http://waynever.sinaapp.com/game/images/14.png','http://waynever.sinaapp.com/game/images/15.png','http://waynever.sinaapp.com/game/images/16.png'];
+			
+			getImgload(imglist,function(){
+				document.getElementById("num").innerHTML = ((this.num/this.sum)*100).toFixed(0);
+				document.getElementById("b").style.width = 100*(this.num/this.sum)+'%';
+				console.log(this);
+				if(this.num == this.sum){
+					console.log("加载完成");
+				}
+			});
 		</script>  
 	</body>  
 </html>  
